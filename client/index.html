@@ -1,0 +1,46 @@
+<html>
+    
+    <head>
+      <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    </head>
+
+<body>
+    
+    <h1>Типа наш клиент</h1>
+    <form action="dropDB.php" method="post">
+      <input type="submit" value="Drop DB">
+    </form>
+    <h2>1) Обмен ключами для AES по протоколу Диффи-Хеллмана</h2>
+    <h3>1.2) Форма ввода параметров для генерации ключа на клиенте:</h3>
+
+    <form action="DH-keys-generate.php" method="post">
+      <label for="b">Случайное натуральное число b - закрытый ключ:</label><br>
+      <input type="text" id="b" name="b"><br><br>
+      <input type="submit" value="Отправить параметры и вычислить открытый ключ">
+    </form>
+    
+    <h2>2) Генерация параметров RSA и публикация открытого ключа цифровой подписи</h2>
+    
+    <form action="RSA-keys-generate.php" method="post">
+      <label for="p">Случайное простое число p:</label><br>
+      <input type="text" id="p" name="p"><br><br>
+      <label for="q">Случайное простое число q:</label><br>
+      <input type="text" id="q" name="q"><br><br>
+      <label for="e">Открытая экспонента e:</label><br>
+      <input type="text" id="e" name="e"><br><br>
+      <input type="submit" value="Отправить параметры и вычислить открытый ключ">
+    </form>
+    
+    <h2>3) Вввод сообщения для отправки:</h2>
+    
+     <form action="send-message.php" method="post">
+      <label for="msg">Текст сообщения:</label><br>
+      <input type="text" id="msg" name="msg" size=100><br><br>
+      <input type="submit" value="Отправить сообщение">
+      <h4>Сообщение будет подписано с помощью RSA и зашифровано по AES, используя сгенерированные ранее ключи.</h4>
+    </form>
+
+</body>
+
+
+</html>
